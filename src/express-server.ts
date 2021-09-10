@@ -1,4 +1,3 @@
-import * as bodyParser from "body-parser";
 import * as express from 'express'
 import { useExpressServer, useContainer as routingUseContainer } from "routing-controllers";
 
@@ -16,14 +15,13 @@ export class ExpressServer {
     private httpServer?: Server
 
     public async setup(port: number) {
-        const server = express()
-        this.server = server
+        this.server = express()
 
-        this.setupStandardMiddlewares(server)
+        this.setupStandardMiddlewares(this.server)
         this.configureDependencyInjection()
-        this.initializeControllers(server)
+        this.initializeControllers(this.server)
 
-        this.httpServer = this.listen(server, port)
+        this.httpServer = this.listen(this.server, port)
         return this.server
     }
 
@@ -36,7 +34,7 @@ export class ExpressServer {
     }
 
     private setupStandardMiddlewares(server: Express) {
-        server.use(bodyParser.json())
+        server.use(express.json())
     }
 
     private initializeControllers(server: Express): void {

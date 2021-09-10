@@ -4,7 +4,7 @@
   "description": "Boiler plate for Express with TypeScript",
   "main": "index.js",
   "scripts": {
-    "start": "ts-node src/index.ts",
+    "start": "nodemon",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "Noyan Ahmed",
@@ -20,6 +20,7 @@
   "devDependencies": {
     "@types/express": "^4.17.6",
     "@types/node": "^16.7.10",
+    "nodemon": "^2.0.12",
     "ts-node": "^8.10.2",
     "tslib": "^2.0.0",
     "typescript": "^3.9.5"

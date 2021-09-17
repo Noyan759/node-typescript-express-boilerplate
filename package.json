@@ -4,7 +4,7 @@
   "description": "Boiler plate for Express with TypeScript",
   "main": "index.js",
   "scripts": {
-    "start": "nodemon",
+    "start": "nodemon -L src/index.ts",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "Noyan Ahmed",
